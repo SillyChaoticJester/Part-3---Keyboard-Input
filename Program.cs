@@ -10,8 +10,19 @@
             response = Console.ReadLine();
             Console.WriteLine($"You said: {response}");
             Console.WriteLine("Now say a number, please");
-            number = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"You said: {number}");
+            if (Int32.TryParse(Console.ReadLine(), out number))
+            {
+
+                Console.WriteLine($"You said: {number}, good job!");
+
+            }
+            else
+            {
+
+                Console.WriteLine("Oops, you've said an invalid number!");
+
+            }
+            
         }
     }
 }
